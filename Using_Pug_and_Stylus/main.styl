@@ -1,0 +1,142 @@
+min = 700px
+max = 900px
+
+setmargin()
+	margin arguments
+setpadding()
+	padding arguments
+body
+	background-color #164B69
+	font-size 14px
+	font-family Arial
+p
+	setmargin(5px 10px)
+	text-align justify
+	line-height 2
+	text-indent 0.5in
+	word-spacing 1px
+code
+	setmargin(0 0.6in)
+	text-align justify
+
+.container
+	display flex
+	flex-direction column
+	align-items flex-start
+	setmargin(10px auto)
+	padding @margin
+	max-width max
+	min-height min
+	background-color #E3E3E3
+	text-align justify
+
+header
+	display flex
+	flex-direction row
+	setmargin(5px auto)
+	justify-content space-evenly
+	text-decoration none
+	& a
+		setmargin(10px)
+		padding @margin
+		font-weight bold
+		color black
+		text-align: center;
+	& a.active
+		background-color #DCDCDC
+	& a:hover
+		background-color #DCDCDC
+		color black
+		text-decoration none
+.text_image
+	display flex
+	flex-direction row
+	align-items flex-start
+	justify-content space-evenly
+	& img
+		setmargin(10px 0 0 0)
+		text-align: right
+		width 100%
+		height 100%
+.images
+	display flex
+	flex-direction row
+	justify-content space-evenly
+	margin 5px auto
+	& img
+		setmargin(0 5px)
+		padding 5px
+		width 250px
+		height 250px
+.info
+	setmargin(5px 10px)
+.video
+	text-align center
+	& video
+		setmargin(10px 0)
+		width 50%
+.syntax_images
+	display flex
+	flex-direction row
+	justify-content space-evenly
+	& .small
+		width 20%
+	& .big
+		width 50%
+		setmargin(0 10px)
+.texts_info
+	display: flex
+	flex-direction: row
+	justify-content: space-evenly
+	width: 100%
+	& .bigtext
+		width 60%
+	& .smalltext
+		width 40%
+		display flex
+		flex-direction column
+		justify-content space-evenly
+
+@media (max-width: 600px)
+	.container
+		width 100%
+		height 100%
+		& video
+			width 100%
+	p
+		line-height 1
+		font-size 14px
+	code
+		font-size 14px
+	header
+		flex-wrap wrap
+		justify-content center
+		& a
+			width 40%
+			padding 5px 0
+	.text_image
+		flex-direction column-reverse
+		& img
+			width 50%
+			height 50%
+			text-align center
+			margin 5px auto
+	.images
+		margin 0 auto
+		flex-direction column
+		& img
+			setmargin(5px auto)
+	.texts_info
+		flex-direction column
+		width 100%
+		& .bigtext
+			width 100%
+		& .smalltext
+			width 100%
+	.syntax_images
+		flex-direction column
+		margin 5px auto
+		& .small
+			setmargin(5px auto)
+		& .big
+			setmargin(5px auto)
