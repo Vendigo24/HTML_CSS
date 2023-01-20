@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="table">
+      <div class="menu">
+        <h2><a href="index.html">Достопримечательности Западной Европы</a></h2><a href="table_page.html"><img src="img/table.png"/></a>
+      </div>
+    </div>
+    <div class="forms">
+      <details>
+        <summary> График</summary>
+        <form>
+          <table>
+            <tbody>
+              <tr>
+                <th>Значениe по оси OX</th>
+                <th>Результат</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" name="ox" value="0"><span>Тип</span><br>
+                  <input type="radio" name="ox" value="1"><span>Страна</span><br>
+                  <input type="radio" name="ox" value="3"><span>Год построения</span><br>
+                </td>
+                <td>
+                  <input type="checkbox" name="oy" value="0"><span>Максимальная посещаемость</span><br>
+                  <input type="checkbox" name="oy" value="0"><span>Минимальная посещаемость</span><br>
+                  <input type="checkbox" name="oy" value="3"><span>Количество достопримечательностей</span><br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <input class="button" type="button" value="Построить">
+        </form>
+      </details>
+      <details class="second">
+        <summary>Фильтр</summary>
+        <form>
+          <p>
+            <label for="structure">Название:
+              <input type="text" name="structure">
+            </label>
+          </p>
+          <p>
+            <label for="category">Тип:
+              <input type="text" name="category">
+            </label>
+          </p>
+          <p>
+            <label for="country">Страна:
+              <input type="text" name="country">
+            </label>
+          </p>
+          <p>
+            <label for="city">Город:
+              <input type="text" name="city">
+            </label>
+          </p>
+          <p>
+            <label for="date">Год построения:</label><br><span>от</span>
+            <input type="text" name="date"><span>до</span>
+            <input type="text" name="date">
+          </p>
+          <p>
+            <label for="attendance">Посещаемость:</label><br><span>от</span>
+            <input type="text" name="date"><span>до</span>
+            <input type="text" name="date">
+          </p>
+          <input class="button" type="button" value="Найти">
+        </form>
+      </details>
+      <details>
+        <summary>Сортировка</summary>
+        <form class="sort">
+          <p>Первый уровень</p>
+          <select name="first_sort">
+            <option value="0">Название</option>
+            <option value="1">Тип</option>
+            <option value="2">Страна</option>
+            <option value="3">Город</option>
+            <option value="4">Год построения</option>
+            <option value="5">Посещаемость тыс. чел.</option>
+          </select>
+          <div class="checkbox">
+            <p>по убыванию</p>
+            <input type="checkbox"/>
+          </div>
+          <p>Второй уровень</p>
+          <select name="second_sort">
+            <option value="0">Название</option>
+            <option value="1">Тип</option>
+            <option value="2">Страна</option>
+            <option value="3">Город</option>
+            <option value="4">Год построения</option>
+            <option value="5">Посещаемость тыс. чел.</option>
+          </select>
+          <div class="checkbox">
+            <p>по убыванию</p>
+            <input type="checkbox"/>
+          </div>
+          <p>Третий уровень</p>
+          <select name="third_sort">
+            <option value="0">Название</option>
+            <option value="1">Тип</option>
+            <option value="2">Страна</option>
+            <option value="3">Город</option>
+            <option value="4">Год построения</option>
+            <option value="5">Посещаемость тыс. чел.</option>
+          </select>
+          <div class="checkbox">
+            <p>по убыванию</p>
+            <input type="checkbox"/>
+          </div>
+          <input class="button" type="button" value="Сортировать">
+        </form>
+      </details>
+    </div>
+    <table class="places">
+      <tr></tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Страна</th>
+      <th>Город</th>
+      <th>Год построения</th>
+      <th>Посещаемость тыс. чел.</th>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+      <tr></tr>
+      <td>Эйфелева башня</td>
+      <td>Башня</td>
+      <td>Франция</td>
+      <td>Париж</td>
+      <td>1889</td>
+      <td>6000</td>
+    </table>
+  </body>
+</html>

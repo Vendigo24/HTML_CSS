@@ -1,0 +1,40 @@
+block variable
+    - var text = ''
+
+mixin CreateHeader()
+    if title == 'main'
+        header.mainpage
+            +CreateMenu()
+            +CreateWelcomeText(text)
+    else if title == 'article'
+        header.article
+            +CreateMenu()
+            +CreateWelcomeText(text)
+    else
+        div.table
+            +CreateMenu()
+
+mixin CreateMenu()
+    div.menu
+        h2
+            a(href='index.html') Достопримечательности Западной Европы
+        a(href='table_page.html')
+            img(src="img/table.png")
+
+mixin CreateWelcomeText(text)
+    div.welcometext
+        p.text=text
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title #{title}
+        link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+        link(rel="stylesheet", href="css/main.css")
+    body
+            block header
+                +CreateHeader
+
+            block content

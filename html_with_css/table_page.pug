@@ -1,0 +1,103 @@
+extends template
+block variable
+    - var eifel = ['Эйфелева башня', 'Башня', 'Франция', 'Париж', '1889', '6000']
+    - var header = ['Название', 'Тип', 'Страна', 'Город', 'Год построения', 'Посещаемость тыс. чел.']
+    - var iter = 0
+
+
+mixin CreateSelectForm(object, sort_name, text)
+        p=text
+        - iter = 0
+        select(name=sort_name)
+            each value in object
+                option(value=iter)=value
+                - iter += 1
+        div.checkbox
+            p по убыванию
+            input(type="checkbox")
+
+mixin CreateRow(object, is_header='No')
+    tr
+    each value in object
+        if is_header == 'Yes'
+            th=value
+        else
+            td=value
+
+mixin CreateTable()
+    table.places
+        +CreateRow(header, is_header='Yes')
+        - iter = 0
+        while iter < 50
+            +CreateRow(eifel)
+            - iter += 1
+
+block content
+    div.forms
+        details
+            summary  График
+            form
+                table
+                    tbody
+                        tr
+                            th Значениe по оси OX
+                            th Результат
+                        tr
+                            td
+                                input(type='radio', name='ox', value='0')
+                                span Тип
+                                br
+                                input(type='radio', name='ox', value='1')
+                                span Страна
+                                br
+                                input(type='radio', name='ox', value='3')
+                                span Год построения
+                                br
+                            td
+                                input(type='checkbox', name='oy', value='0')
+                                span Максимальная посещаемость
+                                br
+                                input(type='checkbox', name='oy', value='0')
+                                span Минимальная посещаемость
+                                br
+                                input(type='checkbox', name='oy', value='3')
+                                span Количество достопримечательностей
+                                br
+                input.button(type='button', value='Построить')
+        details.second
+            summary Фильтр
+            form
+                p
+                    label(for='structure') Название:
+                        input(type='text', name='structure')
+                p
+                    label(for='category') Тип:
+                        input(type='text', name='category')
+                p
+                    label(for='country') Страна:
+                        input(type='text', name='country')
+                p
+                    label(for='city') Город:
+                        input(type='text', name='city')
+                p
+                    label(for='date') Год построения:
+                    br
+                    span от
+                    input(type='text', name='date')
+                    span до
+                    input(type='text', name='date')
+                p
+                    label(for='attendance') Посещаемость:
+                    br
+                    span от
+                    input(type='text', name='date')
+                    span до
+                    input(type='text', name='date')
+                input.button(type='button', value='Найти')
+        details
+            summary Сортировка
+            form.sort
+                each key, value in {'Первый уровень' : 'first_sort', 'Второй уровень' :'second_sort', 'Третий уровень' :'third_sort'}
+                    +CreateSelectForm(header, key, value)
+                input.button(type='button', value='Сортировать')
+    +CreateTable()
