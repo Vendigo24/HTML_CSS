@@ -1,8 +1,8 @@
 extends template
 block variable
-    - var eifel = ['Эйфелева башня', 'Башня', 'Франция', 'Париж', '1889', '6000']
-    - var header = ['Название', 'Тип', 'Страна', 'Город', 'Год построения', 'Посещаемость тыс. чел.']
-    - var iter = 0
+    -  let eifel = ['Эйфелева башня', 'Франция', 'Париж', '1889', '6000'];
+    -  let header = ['Название', 'Страна', 'Город', 'Год построения', 'Посещаемость тыс. чел.'];
+    -  let iter = 0;
 
 
 mixin CreateSelectForm(object, sort_name, text)
@@ -41,14 +41,14 @@ block content
                     tbody
                         tr
                             th Значениe по оси OX
-                            th Результат
+                            th Значение по оси OY
                         tr
                             td
                                 input(type='radio', name='ox', value='0')
-                                span Тип
+                                span Страна
                                 br
                                 input(type='radio', name='ox', value='1')
-                                span Страна
+                                span Город
                                 br
                                 input(type='radio', name='ox', value='3')
                                 span Год построения
